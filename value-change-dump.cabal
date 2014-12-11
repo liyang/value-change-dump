@@ -1,0 +1,46 @@
+name:           value-change-dump
+version:        0.0.0.0
+synopsis:       Streaming parser/builder for the value change dump (VCD) format
+description:
+    <http://en.wikipedia.org/wiki/Value_change_dump Value change dump> is
+    a common <http://en.wikipedia.org/wiki/Electronic_design_automation EDA>
+    <http://en.wikipedia.org/wiki/Logic_simulation simulation> or
+    <http://en.wikipedia.org/wiki/Logic_analyzer analysis> format, defined
+    by the <http://www.eda.org/verilog-ams/htmlpages/tc-docs/lrm/1364/ IEEE 1364 Verilog standard>.
+    .
+    This provides <http://hackage.haskell.org/package/attoparsec attoparsec>
+    parsers and <http://hackage.haskell.org/package/bytestring bytestring>
+    builders for the VCD format, along with stream processing support on top
+    of <http://hackage.haskell.org/package/pipes pipes>.
+homepage:       https://github.com/liyang/value-change-dump
+license:        BSD3
+license-file:   LICENSE
+author:         Liyang HU
+maintainer:     value-change-dump@liyang.hu
+copyright:      © 2014 Liyang HU
+category:       Data, Embedded, Hardware, Parsing, Pipes
+build-type:     Simple
+cabal-version:  >= 1.10
+stability:      experimental
+
+source-repository head
+    type:       git
+    location:   https://github.com/liyang/value-change-dump
+
+library
+    default-language: Haskell2010
+    exposed-modules:
+        Data.VCD
+        Data.VCD.Parser
+        Data.VCD.Types
+    build-depends:
+        attoparsec >= 0.10,
+        base >= 4 && < 5,
+        bytestring >= 0.9.2.1,
+        pipes >= 4.0,
+        pipes-attoparsec >= 0.5,
+        transformers >= 0.2
+    ghc-options: -Wall
+
+-- vim: et sw=4 ts=4 sts=4:
+
